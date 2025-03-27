@@ -584,7 +584,7 @@ section form{
     margin: 1rem auto;
     margin-bottom: 3rem;
 }
-.input-box{
+.form-control{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -628,7 +628,7 @@ input::placeholder{
     font-size: 1.5rem;
     letter-spacing: .02rem;
 }
-.input-box input{
+.form-control input{
     width: 49%;
 }
 input:focus,
@@ -750,7 +750,7 @@ footer i{
     html{
         font-size: 50%;
     }
-    .input-box input{
+    .form-control input{
         width: 100%;
     }
 }
