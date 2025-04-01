@@ -36,9 +36,8 @@ window.onscroll = () => {
     menubar.classList.remove('bx-x');
     Navbar.classList.remove('active');
 }
-window.onload = function () {
-    if (performance.navigation.type === 2) {
-        // If the user navigated back, reset the form
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
         document.querySelector("form").reset();
     }
-};
+});
