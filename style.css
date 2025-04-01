@@ -92,7 +92,7 @@ section{
     padding: 10rem 9% 2rem;
     min-height: 100vh;
 }
-.about,.education,.contact,.skills{
+.about,.education,.contact,.skills,.work{
     overflow: hidden;
 }
 .home{
@@ -217,8 +217,10 @@ section{
     }
 }
  .btn{
-    height: 3.5rem;
+    height: 100%;
     width: 15rem;
+    min-height: 5rem;
+    padding: 1rem 2rem;
     color: #fff;
     background: rgba(255,255,255,.1);
     border: .2rem solid rgba(255,255,255,.3);
@@ -802,7 +804,7 @@ section form{
     margin: 1rem auto;
     margin-bottom: 3rem;
 }
-.form-control{
+.input-box{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -846,7 +848,7 @@ input::placeholder{
     font-size: 1.5rem;
     letter-spacing: .02rem;
 }
-.form-control input{
+.input-box input{
     width: 49%;
 }
 input:focus,
@@ -875,6 +877,7 @@ section.start-animation .btn{
     box-shadow: 0 0 .3rem #0096FF,
     0 0 .7rem #0096FF;
 }
+
 /* footer */
 
 footer{

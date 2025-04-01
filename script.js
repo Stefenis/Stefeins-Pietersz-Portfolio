@@ -36,3 +36,28 @@ window.onscroll = () => {
     menubar.classList.remove('bx-x');
     Navbar.classList.remove('active');
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert("Message sent successfully!");
+          form.reset(); // Clear the form fields
+        } else {
+          alert("There was an error. Please try again.");
+        }
+      })
+      .catch(error => {
+        alert("Something went wrong. Please try again.");
+      });
+    });
+  });
