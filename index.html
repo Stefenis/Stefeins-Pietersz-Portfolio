@@ -265,23 +265,21 @@
 
      </section>
     <!-- *************************Contact Section************************* -->
-
     <section class="contact" id="contact">
-        <h2 class="title">Contact <span>Me</span></h2>
+        <h2 class="title">Contact<span>Me</span></h2>
         <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="c1865e1b-5103-41bb-af87-025d68393100">
-            <div class="input-box">
-    <input type="text" required placeholder="Full Name">
-    <input type="email" required placeholder="Email">
+            <div class="form-control">
+                <input type="text" name="name" class="form-control" placeholder="Full Name" aria-label="Full Name" required>
+                <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email Address" required >
             </div>
-            <div class="input-box">
-    <input type="tel" required placeholder="Mobile Number">
-    <input type="email" required placeholder="Subject For">
+            <div class="form-control">
+                <input type="tel" name="mobile" class="form-control" placeholder="Mobile Number" aria-label="Mobile Number" required>
+                <input type="text" name="subject" class="form-control" placeholder="Subject" aria-label="Subject" required >
             </div>
-    <textarea name="" id="" cols="30" rows="10" placeholder="Message" required></textarea>
-    <input type="submit" value="Send Message" class="btn">
+            <textarea name="message" cols="30" rows="10" placeholder="Message" required aria-label="Your Message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
         </form>
-
     </section>
     
     
