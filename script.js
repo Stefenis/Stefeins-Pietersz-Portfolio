@@ -36,8 +36,43 @@ window.onscroll = () => {
     menubar.classList.remove('bx-x');
     Navbar.classList.remove('active');
 }
-window.addEventListener("pageshow", function (event) {
-    if (event.persisted) {
-        document.querySelector("form").reset();
-    }
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Send the form data via Fetch API
+    let formData = new FormData(this);
+    
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Show success popup
+            Swal.fire({
+                icon: "success",
+                title: "Success!",
+                text: "Message sent successfully!",
+                confirmButtonColor: "#3085d6",
+                confirmButtonText: "OK"
+            });
+
+            // Reset the form after submission
+            document.getElementById("contactForm").reset();
+        } else {
+            Swal.fire({
+                icon: "error",
+                title: "Oops!",
+                text: "Something went wrong. Please try again."
+            });
+        }
+    })
+    .catch(error => {
+        Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Failed to submit form. Please check your internet connection."
+        });
+    });
 });
